@@ -12,6 +12,7 @@
     if ($item->blco_id && $item->blocks) {
         if($item->blco_blocks_ordre) {
             $values_tmp = unserialize($item->blco_blocks_ordre);
+            if (!is_array($values_tmp)) $values_tmp = array();
             $values = array();
             $block_in_column = array();
             foreach ($item->blocks as $block) {
